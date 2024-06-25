@@ -1,0 +1,105 @@
+create schema movie_ticketing_platform;
+use movie_ticketing_platform;
+
+CREATE TABLE `Movie` (
+  `Movie_ID` char(10),
+  `Movie_Title` varchar(10),
+  `Movie_Description` varchar(100),
+  `Genre` varchar(10),
+  `Language` varchar(10),
+  PRIMARY KEY (`Movie_ID`)
+);
+
+CREATE TABLE `Theatre` (
+  `Theatre_ID` char(10),
+  `Theatre_Name` varchar(15),
+  `Address` varchar(100),
+  `Contact_Number` varchar(20),
+  `Theatre_email` varchar(20),
+  `Seating_capacity` varchar(10),
+  PRIMARY KEY (`Theatre_ID`)
+);
+
+CREATE TABLE `Movie_Show` (
+  `Movie_Show_ID` char(10),
+  `Show_Time` datetime,
+  `Movie_ID` char(10),
+  `Theatre_ID` char(10),
+  PRIMARY KEY (`Movie_Show_ID`),
+  FOREIGN KEY (`Movie_ID`) REFERENCES `Movie`(`Movie_ID`),
+  FOREIGN KEY (`Theatre_ID`) REFERENCES `Theatre`(`Theatre_ID`),
+  KEY `Key` (`Show_Time`)
+);
+
+CREATE TABLE `Seat` (
+  `Seat_ID` char(10),
+  `Theatre_ID` char(10),
+  `Row` char(10),
+  `Number` char(10),
+  `Category(VIP)` char(10),
+  PRIMARY KEY (`Seat_ID`),
+  FOREIGN KEY (`Theatre_ID`) REFERENCES `Theatre`(`Theatre_ID`)
+);
+
+CREATE TABLE `Roles` (
+  `Role_ID` char(20),
+  `Role_Name` varchar(30),
+  PRIMARY KEY (`Role_ID`)
+);
+
+CREATE TABLE `User` (
+  `User_ID` char(10),
+  `User_Name` varchar(20),
+  `User_email_address` varchar(20),
+  `User_contact_number` varchar(10),
+  `Role_ID` char(20),
+  `PasswordHash` varchar(50),
+  PRIMARY KEY (`User_ID`),
+  FOREIGN KEY (`Role_ID`) REFERENCES `Roles`(`Role_ID`)
+);
+
+CREATE TABLE `Payment_Type` (
+  `Payment_Type_Id` char(10),
+  `Payment_Type` varchar(20),
+  PRIMARY KEY (`Payment_Type_Id`)
+);
+
+CREATE TABLE `User_Payment_Method` (
+  `Payment_Method_Id` char(10),
+  `User_Id` char(10),
+  `Payment_Type_Id` char(10),
+  `Provider (Visa,MasterCard)` varchar(15),
+  `Account_Number` varchar(15),
+  `Expiry_Date` Datetime,
+  `Is_Default` BIT,
+  PRIMARY KEY (`Payment_Method_Id`),
+  FOREIGN KEY (`User_Id`) REFERENCES `User`(`User_ID`),
+  FOREIGN KEY (`Payment_Type_Id`) REFERENCES `Payment_Type`(`Payment_Type_Id`)
+);
+
+CREATE TABLE `Bookings` (
+  `Booking_ID` char(10),
+  `Movie_Show_ID` char(10),
+  `Payment_Method_ID` char(10),
+  `User_ID` char(10),
+  `Booking_Time` Datetime,
+  `Payment_Status` BIT,
+  `Total_Price` int,
+  PRIMARY KEY (`Booking_ID`),
+  FOREIGN KEY (`Payment_Method_ID`) REFERENCES `User_Payment_Method`(`Payment_Method_Id`),
+  FOREIGN KEY (`User_ID`) REFERENCES `User`(`User_ID`),
+  FOREIGN KEY (`Movie_Show_ID`) REFERENCES `Movie_Show`(`Movie_Show_ID`)
+);
+
+CREATE TABLE `Booked_Seats` (
+  `Booked_Seat_ID` char(10),
+  `Booking_ID` char(10),
+  `Ticket_Type` char(10),
+  `Seat_ID` char(10),
+  `Price` int,
+  PRIMARY KEY (`Booked_Seat_ID`),
+  FOREIGN KEY (`Seat_ID`) REFERENCES `Seat`(`Seat_ID`),
+  FOREIGN KEY (`Booking_ID`) REFERENCES `Bookings`(`Booking_ID`),
+  KEY `Key` (`Ticket_Type`)
+);
+
