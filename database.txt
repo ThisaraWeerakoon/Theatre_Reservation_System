@@ -100,4 +100,5 @@ CREATE TABLE `Booked_Seats` (
   PRIMARY KEY (`Booked_Seat_ID`),
   FOREIGN KEY (`Seat_ID`) REFERENCES `Seat`(`Seat_ID`),
   FOREIGN KEY (`Booking_ID`) REFERENCES `Bookings`(`Booking_ID`),
-  KEY `Key` (`Tick
+  KEY `Key` (`Ticket_Type`)
+);
