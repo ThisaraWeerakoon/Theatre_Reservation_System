@@ -30,24 +30,8 @@ public class MovieController {
 //        return userService.createUser(user);
 //    }
 //
-    @PostMapping("/register")
-    public ResponseEntity<Map<String, String>> createUser(@Valid @RequestBody User user) {
-        String registrationResult = userService.createUser(user);
 
-        Map<String, String> response = new HashMap<>();
-        response.put("message", registrationResult);
 
-        if (registrationResult.equals("Email already exists")) {
-            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
-        } else {
-            return new ResponseEntity<>(response, HttpStatus.OK);
-        }
-    }
-    @PostMapping("/login")
-    public ResponseEntity<Map<String, String>> loginHandle(@RequestBody LoginDTO loginDTO) {
-        log.info("Login request received for user: {}", loginDTO.getEmail());
-        return userService.userLogin(loginDTO);
-    }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -64,8 +48,8 @@ public class MovieController {
         return errors;
     }
     @GetMapping
-    public List<User> getAllUsers() {
-        return userService.getAllUsers();
+    public List<Movie> getAllMovies() {
+        return movieService.getAllMovies();
     }
 //
 //    @GetMapping("/{id}")

@@ -2,6 +2,7 @@ package com.example.ticketBooking.service;
 import com.example.ticketBooking.DTO.LoginDTO;
 import com.example.ticketBooking.model.Movie;
 import com.example.ticketBooking.repository.MovieRepo;
+import jakarta.validation.constraints.Null;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,19 +26,10 @@ public class MovieService {
     private MovieRepo movieRepository;
     private PasswordEncoder passwordEncoder;
 
-    public String createMovie(Movie movie) {
-
-        if (userRepository.existsByEmail(user.getEmail())) {
-            return "Email already exists";
-        } else {
-            String hashedPassword = passwordEncoder.encode(user.getPasswordHash());
-            user.setPasswordHash(hashedPassword);
-            userRepository.save(user);
-            return "Customer Successfully Registered";
-        }
+    public String createMovie(Movie movie) { return "Thisara";
     }
 
-    public List<User> getAllMovies() {
+    public List<Movie> getAllMovies() {
         return movieRepository.findAll();
     }
 //
@@ -136,7 +128,7 @@ public class MovieService {
         return new ResponseEntity<>(response, requestStatus);
     }
     */
-     */
+
 
 
 }
