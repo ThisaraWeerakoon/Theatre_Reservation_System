@@ -14,19 +14,19 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Movie_ID")
-    private Integer Movie_ID;
+    private Integer movie_ID;
 
     @Column(name = "Movie_Title",length = 100)
-    private String Movie_Title;
+    private String movie_Title;
 
     @Column(name = "Movie_Description", length = 255)
-    private String Movie_Description;
+    private String movie_Description;
 
     @Column(name = "Genre",length=50)
-    private String Genre;
+    private String genre;
 
     @Column(name = "Language",length=50)
-    private String Language;
+    private String language;
 
 
 }
