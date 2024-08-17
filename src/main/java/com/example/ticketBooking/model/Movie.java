@@ -7,28 +7,26 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "user")
+@Table(name = "Movie")
 
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "User_ID")
-    private Integer User_ID;
+    @Column(name = "Movie_ID")
+    private Integer Movie_ID;
 
-    @Column(name = "User_Name",length = 50)
-    private String name;
+    @Column(name = "Movie_Title",length = 100)
+    private String Movie_Title;
 
-    @Column(name = "User_email_address", length = 50)
-    private String email;
+    @Column(name = "Movie_Description", length = 255)
+    private String Movie_Description;
 
-    @Column(name = "User_contact_number",length=20)
-    private String contactNumber;
+    @Column(name = "Genre",length=50)
+    private String Genre;
 
-    @Column(name = "Role_ID")
-    private Integer roleId;
+    @Column(name = "Language",length=50)
+    private String Language;
 
-    @Column(name = "PasswordHash", length=100)
-    private String passwordHash;
 
 }
