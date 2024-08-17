@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a784482a-3043-437f-8b36-bb900fc857e6" name="Changes" comment="commit testing">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ticketBooking/TicketBookingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ticketBooking/TicketBookingApplication.java" afterDir="false" />
+    <list default="true" id="a784482a-3043-437f-8b36-bb900fc857e6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ticketBooking/model/Movie.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,14 +43,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/Users/kumara/Desktop/Theatre Reservation Project/Theatre_Reservation_System"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/kumara/Desktop/Theatre Reservation Project/Theatre_Reservation_System&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
