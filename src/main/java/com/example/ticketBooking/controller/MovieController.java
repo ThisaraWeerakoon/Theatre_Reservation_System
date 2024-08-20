@@ -47,10 +47,10 @@ public class MovieController {
 
         return errors;
     }
-    @GetMapping
-    public List<Movie> getAllMovies() {
-        return movieService.getAllMovies();
-    }
+//    @GetMapping
+//    public List<Movie> getAllMovies() {
+//        return movieService.getAllMovies();
+//    }
 //
 //    @GetMapping("/{id}")
 //    public User getUserById(@PathVariable Long id) {
