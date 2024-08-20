@@ -4,18 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+
     <list default="true" id="b6a39d62-d263-4ee1-b24c-b3e849a683bb" name="Changes" comment="commit testing" />
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+
   <component name="Git.Settings">
+
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/ticketBooking/TicketBookingApplication.java" root0="FORCE_HIGHLIGHTING" />
   </component>
+
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
@@ -29,7 +34,9 @@
       </method>
     </configuration>
   </component>
+
   <component name="TaskManager">
+
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -37,10 +44,13 @@
       <map>
         <entry key="MAIN">
           <value>
+
             <State />
+
           </value>
         </entry>
       </map>
     </option>
   </component>
+
 </project>
